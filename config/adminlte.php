@@ -257,12 +257,14 @@ return [
         ['header' => 'REPORTS'],
         [
             'text'  => 'Generate Report',
-            'icon'  => 'far fa fa-share',
+            'icon'  => 'far fa fa-plus-square',
+            'icon_color' => 'info',
             'route' => 'reports.data.index',
         ],
         [
             'text'  => 'Show Reports',
-            'icon'  => 'far fa fa-share',
+            'icon'  => 'far fa fa-file',
+            'icon_color' => 'green',
             'route' => 'reports.data.show',
         ],
         
@@ -270,33 +272,35 @@ return [
         [
             'text'        => 'All Reports',
             'url'         => 'admin/pages1',
-            'icon'        => 'far fa-fw fa-file',
+            'icon'        => 'far fa fa-database',
+            'icon_color'  => 'info',
             'label'       => 3,
-            'icon_color'  => 'blue',
             'label_color' => 'success',
         ],
         [
             'text'        => 'All Report Types',
             'url'         => 'admin/pages2',
-            'icon'        => 'far fa-fw fa-file',
+            'icon'        => 'far fa fa-database',
             'label'       => 4,
-            'icon_color'  => 'blue',
+            'icon_color'  => 'info',
             'label_color' => 'success',
         ],
         [
             'text'       => 'Create',
             'url'        => 'admin/pages3',
-            'icon'       => 'far fa-fw fa-file',
+            'icon'       => 'far fa fa-plus-square',
             'icon_color' => 'green',
             'submenu'    => [
                 [
                     'text'       => 'Report',
                     'url'        => '#',
+                    'icon'       => 'far fa fa-angle-right',
                     'icon_color' => 'cyan',
                 ],
                 [
                     'text'       => 'Report Type',
                     'url'        => '#',
+                    'icon'       => 'far fa fa-angle-right',
                     'icon_color' => 'cyan',
                 ],
             ]

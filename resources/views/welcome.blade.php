@@ -1,4 +1,4 @@
-@extends('adminlte::page', ['iFrameEnabled' => true])
+@extends('adminlte::page')
 
 @section('title', 'EO Dashboard')
 
@@ -12,6 +12,8 @@
 
 @section('css')
     <link rel="stylesheet" href="/css/admin_custom.css">
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
 @stop
 
 @section('js')

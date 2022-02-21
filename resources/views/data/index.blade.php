@@ -1,3 +1,13 @@
+@extends('adminlte::page')
+
+@section('title', 'EO | Add Report')
+
+@section('content_header')
+    <h1>Add a New Report</h1>
+@stop
+
+@section('content')
+
 <div class="clearfix row">
     <div class="col-lg-12 col-md-12">
         <div class="card ">
@@ -399,3 +409,16 @@
         </div>
     </div>
 </div>
+
+
+@stop
+
+@section('css')
+    <link rel="stylesheet" href="/css/admin_custom.css">
+@stop
+
+@section('js')
+    <script>
+        console.log('Hi There!');
+    </script>
+@stop
