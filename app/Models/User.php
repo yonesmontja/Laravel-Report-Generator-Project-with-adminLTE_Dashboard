@@ -47,4 +47,21 @@ class User extends Authenticatable
     {
         return $this->hasMany(ReportUser::class);
     }
+
+    // User Menu Image, Description and Profile URL.
+    public function adminlte_image()
+    {
+        // return 'https://picsum.photos/300/300';
+        return "vendor/adminlte/dist/img/user2.png";
+    }
+
+    public function adminlte_desc()
+    {
+        return "I am a Backend Web Developer in Larawel & Livewire";
+    }
+
+    public function adminlte_profile_url()
+    {
+        return 'profile/username';
+    }
 }

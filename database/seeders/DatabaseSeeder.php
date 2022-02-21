@@ -87,12 +87,18 @@ class DatabaseSeeder extends Seeder
         User::create([
             'name'     => 'ZeeBoy',
             'email'    => 'zeeboy@email.com',
-            'password' => 'admin123'
+            'password' => '$2y$10$lhB.bh9x2Yl95awY6DqQfuwS1/eAEV2KzsRHcVKBxc1QlEt1bZd3m'
+            // 'password' => 'admin123'
         ]);
         User::create([
             'name'     => 'Haroon',
             'email'    => 'haroon@email.com',
-            'password' => 'admin123'
+            'password' => '$2y$10$lhB.bh9x2Yl95awY6DqQfuwS1/eAEV2KzsRHcVKBxc1QlEt1bZd3m'
+        ]);
+        User::create([
+            'name'     => 'Haris',
+            'email'    => 'haris@email.com',
+            'password' => '$2y$10$lhB.bh9x2Yl95awY6DqQfuwS1/eAEV2KzsRHcVKBxc1QlEt1bZd3m'
         ]);
 
 

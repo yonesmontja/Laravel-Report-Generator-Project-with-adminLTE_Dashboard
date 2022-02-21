@@ -66,10 +66,10 @@ return [
 
     'usermenu_enabled' => true,
     'usermenu_header' => true,
-    'usermenu_header_class' => 'bg-primary',
-    'usermenu_image' => false,
-    'usermenu_desc' => false,
-    'usermenu_profile_url' => false,
+    'usermenu_header_class' => 'bg-dark',
+    'usermenu_image' => true,
+    'usermenu_desc' => true,
+    'usermenu_profile_url' => true,
 
     /*
     |--------------------------------------------------------------------------
@@ -108,6 +108,13 @@ return [
     'classes_auth_footer' => '',
     'classes_auth_icon' => '',
     'classes_auth_btn' => 'btn-flat btn-primary',
+    // --------------------
+    // 'classes_auth_card' => '',
+    // 'classes_auth_header' => 'bg-gradient-info',
+    // 'classes_auth_body' => '',
+    // 'classes_auth_footer' => 'text-center',
+    // 'classes_auth_icon' => 'fa-lg text-info',
+    // 'classes_auth_btn' => 'btn-flat btn-primary',
 
     /*
     |--------------------------------------------------------------------------
@@ -187,7 +194,7 @@ return [
     |
     */
 
-    'use_route_url' => true,
+    'use_route_url' => false,
     'dashboard_url' => 'home',
     'logout_url' => 'logout',
     'login_url' => 'login',
@@ -247,13 +254,25 @@ return [
             'can'  => 'manage-blog',
         ],
 
+        ['header' => 'REPORTS'],
+        [
+            'text'  => 'Generate Report',
+            'icon'  => 'far fa fa-share',
+            'route' => 'reports.data.index',
+        ],
+        [
+            'text'  => 'Show Reports',
+            'icon'  => 'far fa fa-share',
+            'route' => 'reports.data.show',
+        ],
+        
         ['header' => 'REPORT MANAGEMENT'],
         [
             'text'        => 'All Reports',
             'url'         => 'admin/pages1',
             'icon'        => 'far fa-fw fa-file',
             'label'       => 3,
-            'icon_color' => 'blue',
+            'icon_color'  => 'blue',
             'label_color' => 'success',
         ],
         [
@@ -261,7 +280,7 @@ return [
             'url'         => 'admin/pages2',
             'icon'        => 'far fa-fw fa-file',
             'label'       => 4,
-            'icon_color' => 'blue',
+            'icon_color'  => 'blue',
             'label_color' => 'success',
         ],
         [
@@ -281,17 +300,6 @@ return [
                     'icon_color' => 'cyan',
                 ],
             ]
-        ],
-        ['header' => 'REPORTS'],
-        [
-            'text'        => 'Generate Report',
-            'icon'        => 'far fa fa-share',
-            'url'         => 'reports/data/index',
-        ],
-        [
-            'text'        => 'Show Reports',
-            'icon'        => 'far fa fa-share',
-            'url'         => 'reports/data/show',
         ],
         ['header' => 'account_settings'],
         [
