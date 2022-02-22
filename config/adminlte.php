@@ -14,8 +14,8 @@ return [
     |
     */
 
-    'title' => 'EO Portal',
-    'title_prefix' => '',
+    'title'         => 'EO Portal',
+    'title_prefix'  => '',
     'title_postfix' => '',
 
     /*
@@ -30,7 +30,7 @@ return [
     |
     */
 
-    'use_ico_only' => false,
+    'use_ico_only'     => false,
     'use_full_favicon' => false,
 
     /*
@@ -45,12 +45,12 @@ return [
     |
     */
 
-    'logo' => '<b>EO</b>Portal',
-    'logo_img' => 'vendor/adminlte/dist/img/EO_logo.png',
-    'logo_img_class' => 'brand-image img-circle elevation-2',
-    'logo_img_xl' => null,
+    'logo'              => '<b>EO</b>Portal',
+    'logo_img'          => 'vendor/adminlte/dist/img/EO_logo.png',
+    'logo_img_class'    => 'brand-image img-circle elevation-2',
+    'logo_img_xl'       => null,
     'logo_img_xl_class' => 'brand-image-xs',
-    'logo_img_alt' => 'EO_logo',
+    'logo_img_alt'      => 'EO_logo',
 
     /*
     |--------------------------------------------------------------------------
@@ -64,12 +64,12 @@ return [
     |
     */
 
-    'usermenu_enabled' => true,
-    'usermenu_header' => true,
+    'usermenu_enabled'      => true,
+    'usermenu_header'       => true,
     'usermenu_header_class' => 'bg-dark',
-    'usermenu_image' => true,
-    'usermenu_desc' => true,
-    'usermenu_profile_url' => true,
+    'usermenu_image'        => true,
+    'usermenu_desc'         => true,
+    'usermenu_profile_url'  => true,
 
     /*
     |--------------------------------------------------------------------------
@@ -83,12 +83,12 @@ return [
     |
     */
 
-    'layout_topnav' => null,
-    'layout_boxed' => null,
+    'layout_topnav'        => null,
+    'layout_boxed'         => null,
     'layout_fixed_sidebar' => null,
-    'layout_fixed_navbar' => null,
-    'layout_fixed_footer' => null,
-    'layout_dark_mode' => null,
+    'layout_fixed_navbar'  => null,
+    'layout_fixed_footer'  => null,
+    'layout_dark_mode'     => null,
 
     /*
     |--------------------------------------------------------------------------
@@ -102,12 +102,12 @@ return [
     |
     */
 
-    'classes_auth_card' => 'card-outline card-primary',
+    'classes_auth_card'   => 'card-outline card-primary',
     'classes_auth_header' => '',
-    'classes_auth_body' => '',
+    'classes_auth_body'   => '',
     'classes_auth_footer' => '',
-    'classes_auth_icon' => '',
-    'classes_auth_btn' => 'btn-flat btn-primary',
+    'classes_auth_icon'   => '',
+    'classes_auth_btn'    => 'btn-flat btn-primary',
     // --------------------
     // 'classes_auth_card' => '',
     // 'classes_auth_header' => 'bg-gradient-info',
@@ -128,16 +128,16 @@ return [
     |
     */
 
-    'classes_body' => '',
-    'classes_brand' => '',
-    'classes_brand_text' => '',
-    'classes_content_wrapper' => '',
-    'classes_content_header' => '',
-    'classes_content' => '',
-    'classes_sidebar' => 'sidebar-light-primary elevation-2',
-    'classes_sidebar_nav' => '',
-    'classes_topnav' => 'navbar-white navbar-light',
-    'classes_topnav_nav' => 'navbar-expand',
+    'classes_body'             => '',
+    'classes_brand'            => '',
+    'classes_brand_text'       => '',
+    'classes_content_wrapper'  => '',
+    'classes_content_header'   => '',
+    'classes_content'          => '',
+    'classes_sidebar'          => 'sidebar-light-primary elevation-2',
+    'classes_sidebar_nav'      => '',
+    'classes_topnav'           => 'navbar-white navbar-light',
+    'classes_topnav_nav'       => 'navbar-expand',
     'classes_topnav_container' => 'container',
 
     /*
@@ -152,15 +152,15 @@ return [
     |
     */
 
-    'sidebar_mini' => 'lg',
-    'sidebar_collapse' => false,
-    'sidebar_collapse_auto_size' => false,
-    'sidebar_collapse_remember' => false,
+    'sidebar_mini'                            => 'lg',
+    'sidebar_collapse'                        => false,
+    'sidebar_collapse_auto_size'              => false,
+    'sidebar_collapse_remember'               => false,
     'sidebar_collapse_remember_no_transition' => true,
-    'sidebar_scrollbar_theme' => 'os-theme-light',
-    'sidebar_scrollbar_auto_hide' => 'l',
-    'sidebar_nav_accordion' => true,
-    'sidebar_nav_animation_speed' => 300,
+    'sidebar_scrollbar_theme'                 => 'os-theme-light',
+    'sidebar_scrollbar_auto_hide'             => 'l',
+    'sidebar_nav_accordion'                   => true,
+    'sidebar_nav_animation_speed'             => 300,
 
     /*
     |--------------------------------------------------------------------------
@@ -174,12 +174,12 @@ return [
     |
     */
 
-    'right_sidebar' => false,
-    'right_sidebar_icon' => 'fas fa-cogs',
-    'right_sidebar_theme' => 'dark',
-    'right_sidebar_slide' => true,
-    'right_sidebar_push' => true,
-    'right_sidebar_scrollbar_theme' => 'os-theme-light',
+    'right_sidebar'                     => false,
+    'right_sidebar_icon'                => 'fas fa-cogs',
+    'right_sidebar_theme'               => 'dark',
+    'right_sidebar_slide'               => true,
+    'right_sidebar_push'                => true,
+    'right_sidebar_scrollbar_theme'     => 'os-theme-light',
     'right_sidebar_scrollbar_auto_hide' => 'l',
 
     /*
@@ -194,14 +194,14 @@ return [
     |
     */
 
-    'use_route_url' => false,
-    'dashboard_url' => 'home',
-    'logout_url' => 'logout',
-    'login_url' => 'login',
-    'register_url' => 'register',
+    'use_route_url'      => false,
+    'dashboard_url'      => 'home',
+    'logout_url'         => 'logout',
+    'login_url'          => 'login',
+    'register_url'       => 'register',
     'password_reset_url' => 'password/reset',
     'password_email_url' => 'password/email',
-    'profile_url' => false,
+    'profile_url'        => false,
 
     /*
     |--------------------------------------------------------------------------
@@ -215,9 +215,9 @@ return [
     |
     */
 
-    'enabled_laravel_mix' => false,
+    'enabled_laravel_mix'  => false,
     'laravel_mix_css_path' => 'css/app.css',
-    'laravel_mix_js_path' => 'js/app.js',
+    'laravel_mix_js_path'  => 'js/app.js',
 
     /*
     |--------------------------------------------------------------------------
@@ -258,50 +258,49 @@ return [
         [
             'text'  => 'Generate Report',
             'icon'  => 'far fa fa-plus-square',
-            'icon_color' => 'info',
+            // 'icon_color' => 'info',
             'route' => 'reports.data.index',
         ],
         [
             'text'  => 'Show Reports',
             'icon'  => 'far fa fa-file',
-            'icon_color' => 'green',
+            // 'icon_color' => 'green',
             'route' => 'reports.data.show',
         ],
-        
+
         ['header' => 'REPORT MANAGEMENT'],
         [
             'text'        => 'All Reports',
             'url'         => 'admin/pages1',
             'icon'        => 'far fa fa-database',
-            'icon_color'  => 'info',
-            'label'       => 3,
+            // 'icon_color'  => 'info',
+            // 'label'       => 3,
             'label_color' => 'success',
         ],
         [
             'text'        => 'All Report Types',
             'url'         => 'admin/pages2',
             'icon'        => 'far fa fa-database',
-            'label'       => 4,
-            'icon_color'  => 'info',
+            // 'icon_color'  => 'info',
             'label_color' => 'success',
         ],
         [
             'text'       => 'Create',
             'url'        => 'admin/pages3',
             'icon'       => 'far fa fa-plus-square',
-            'icon_color' => 'green',
+            // 'icon_color' => 'green',
             'submenu'    => [
                 [
                     'text'       => 'Report',
                     'url'        => '#',
                     'icon'       => 'far fa fa-angle-right',
-                    'icon_color' => 'cyan',
+                    // 'icon_color' => 'cyan',
                 ],
                 [
                     'text'       => 'Report Type',
                     'url'        => '#',
                     'icon'       => 'far fa fa-angle-right',
-                    'icon_color' => 'cyan',
+                    // 'icon_color' => 'cyan',
                 ],
             ]
         ],
@@ -316,22 +315,12 @@ return [
             'url'  => 'admin/settings',
             'icon' => 'fas fa-fw fa-lock',
         ],
-        ['header' => 'labels'],
-        [
-            'text'       => 'important',
-            'icon_color' => 'red',
-            'url'        => '#',
-        ],
-        [
-            'text'       => 'warning',
-            'icon_color' => 'yellow',
-            'url'        => '#',
-        ],
-        [
-            'text'       => 'information',
-            'icon_color' => 'cyan',
-            'url'        => '#',
-        ],
+        // ['header' => 'labels'],
+        // [
+        //     'text'       => 'information',
+        //     'icon_color' => 'cyan',
+        //     'url'        => '#',
+        // ],
     ],
 
     /*
