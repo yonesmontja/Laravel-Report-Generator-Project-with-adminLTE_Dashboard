@@ -96,13 +96,21 @@ class ReportController extends Controller
 
     public function typeStore(Request $request)
     {
+        // dd($request->all());
+
         ReportType::create(
-            $request->validate([
+            request()->validate([
                 'report_id'   => 'required',
                 'name'        => 'required|min:1|max:50|unique:report_types,name',
                 'description' => 'max:50'
             ])
         );
+
+        // ReportType::create([
+        //     'report_id'   => $request->input('report'),
+        //     'name'        => $request->input('name'),
+        //     'description' => $request->input('description'),
+        // ]);
 
         return redirect()->route('reports.types');
     }
@@ -115,7 +123,7 @@ class ReportController extends Controller
 
         return view('types.edit')
             ->with([
-                'type'   => $type,
+                'type'    => $type,
                 'reports' => Report::all()
             ]);
     }
@@ -125,7 +133,7 @@ class ReportController extends Controller
         ReportType::whereId($id)
             ->update(
                 $request->validate([
-                    'report_id'    => 'required',
+                    'report_id'   => 'required',
                     'name'        => 'required|min:1|max:50|unique:report_types,name,' . $id,
                     'description' => 'max:50'
                 ])

@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'EO | Add Report')
+@section('title', 'Add Report | EO')
 
 @section('content_header')
     <div class="my-2"></div>
@@ -18,25 +18,30 @@
                 </div>
                 <!-- /.card-header -->
 
-                <div class="text-center body">
+                <div class="text-center card-body">
 
-                    <div class="container">
-                        <form action="{{ route('reports.data.index') }}" method="get">
-                            <div class="form-group d-flex flex-column mx-2">
-                                <label for="report" class="d-block text-left my-2">
-                                    Please Select a Report to Show Form:
-                                </label>
-                                <select class="form-control d-inline my-2 overflow-y-auto" name="report">
-                                    @forelse ($allReports as $report)
-                                        <option value="{{ $report->id }}"
-                                            @if ($report->id == request('report')) selected @endif>
-                                            {{ $report->name }}</option>
-                                    @empty
-                                        <option disabled>No Reports Found</option>
-                                    @endforelse
-                                </select>
+                    <div class="container px-0">
+                        <form action="{{ route('report.data.index') }}" method="get">
+                            <div class="col-sm-12 col-md-12 col-lg-12 mt-3">
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend wide-prepend">
+                                        <label class="input-group-text overflow-auto" for="report">
+                                            Choose a Report Category:
+                                        </label>
+                                    </div>
+                                    <select class="form-control overflow-y-auto" name="report">
+                                        @forelse ($allReports as $report)
+                                            <option value="{{ $report->id }}"
+                                                @if ($report->id == request('report')) selected @endif>
+                                                {{ $report->name }}
+                                            </option>
+                                        @empty
+                                            <option disabled>No Reports Found</option>
+                                        @endforelse
+                                    </select>
+                                </div>
 
-                                <button class="btn btn-primary btn-round px-3 my-2">
+                                <button class="btn btn-primary btn-round px-3">
                                     Show Form
                                 </button>
                             </div>
@@ -44,16 +49,16 @@
                     </div>
 
                     <div>
-                        <form method="POST" action="{{ route('reports.data.store') }}">
+                        <form method="POST" action="{{ route('report.data.store') }}">
                             @csrf
                             @method('PUT')
                             <div class="form-group">
                                 @forelse ($allTypes as $type)
-                                    <div class="col-sm-12 col-md-12 col-lg-12 mt-3 px-3">
+                                    <div class="col-sm-12 col-md-12 col-lg-12 mt-3">
                                         <div class="input-group mb-3">
                                             <div class="input-group-prepend wide-prepend">
                                                 <label class="input-group-text overflow-auto"
-                                                    for="last_name">{{ $type->name }}:</label>
+                                                    for="report_type">{{ $type->name }}:</label>
                                             </div>
                                             <input type="text" name="{{ $type->id }}" wire:model="title"
                                                 class="form-control" placeholder="Enter {{ $type->name }}">
@@ -69,8 +74,10 @@
                                         </div>
                                     </div>
                                 @empty
-                                    <h3 class="bg-red-400 text-center text-gray-900 text-lg font-bold rounded py-5 m-3">
-                                        This Report Has No Fields.
+                                    <h3
+                                        class="bg-red-400 text-center text-gray-900 text-lg font-bold rounded py-5 mt-5 mb-3 mx-3">
+                                        This Report Has No Fields.<br>
+                                        Or Click On <span class="underline">Show Form</span> Button To Show The Form.
                                     </h3>
                                 @endforelse
                             </div>
@@ -92,7 +99,8 @@
                         </div>
                     </div> --}}
 
-                </div> {{-- body --}}
+                </div>
+                <!-- /.card-body -->
             </div>
         </div>
     </div>
@@ -100,7 +108,7 @@
 @stop
 
 @section('css')
-    <link rel="stylesheet" href="{{ asset('css/admin_custom.css') }}">
+    <link rel="stylesheet" href="css/admin_custom.css">
     <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 

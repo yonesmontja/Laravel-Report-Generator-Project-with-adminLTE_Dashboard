@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'EO | Reports')
+@section('title', 'Reports | EO')
 
 @section('content_header')
     <div class="my-2"></div>
@@ -11,40 +11,16 @@
     <div class="clearfix row">
         <div class="col-lg-12 col-md-12">
             <div class="card">
+                <!-- card-header -->
                 <div class="card-header m-3">
                     <h1 class="card-title text-3xl">
                         <b>EO</b> Reports
                     </h1>
-                    <div class="card-tools">
-                        <!-- Buttons, labels, and many other things can be placed here! -->
-                        <!-- Here is a label for example -->
-                        {{-- <span class="badge badge-primary">Label</span> --}}
-                    </div>
-                    <!-- /.card-tools -->
                 </div>
                 <!-- /.card-header -->
-
+                
+                <!-- card-body -->
                 <div class="card-body">
-                    {{-- <div class="mb-4 row">
-                    <div class="col-lg-6 col-md-6 col-sm-6">
-                        <div class="col form-inline">
-                            Per Page: &nbsp;
-                            <select class="form-control" wire:model="perPage">
-                                <option value="10">10</option>
-                                <option value="15">15</option>
-                                <option value="20">20</option>
-                                <option value="50">50</option>
-                                <option value="100">100</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6">
-                        <div class="col">
-                            <input class="form-control" wire:model.debounce.200ms="searchField" type="text"
-                                placeholder="Search">
-                        </div>
-                    </div>
-                </div> --}}
                     @if (optional($reportUsers)->count() > 0)
                         <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12">
@@ -100,15 +76,17 @@
                                                         @endforelse
                                                     </td>
                                                     <td width="100">
-                                                        <a href="#">
-                                                            <button class="btn btn-warning btn-round px-2 py-1 mb-2">
+                                                        <a href="">
+                                                            <button
+                                                                class="btn rounded bg-yellow-400 hover:bg-yellow-500 px-2 py-1 mb-2">
                                                                 <i class="fas fa-edit"></i>
                                                                 &nbsp;
                                                                 Edit
                                                             </button>
                                                         </a>
-                                                        <a href="#">
-                                                            <button class="btn btn-round btn-danger py-1">
+                                                        <a href="">
+                                                            <button
+                                                                class="btn rounded bg-red-600 text-white hover:bg-red-700 py-1">
                                                                 <i class="fas fa-trash"></i>
                                                                 &nbsp;
                                                                 Del
