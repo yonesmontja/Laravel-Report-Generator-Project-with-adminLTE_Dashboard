@@ -58,7 +58,7 @@
 @stop
 
 @section('css')
-    <link rel="stylesheet" href="{{ asset('css/admin_custom.css') }}">
+    <link rel="stylesheet" href="css/admin_custom.css">
     <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 

@@ -262,7 +262,7 @@ return [
             // 'icon_color' => 'info',
         ],
         [
-            'text'  => 'Show Reports',
+            'text'  => 'All Reports',
             'icon'  => 'far fa fa-user',
             'route' => 'reports.data.show',
             // 'icon_color' => 'green',

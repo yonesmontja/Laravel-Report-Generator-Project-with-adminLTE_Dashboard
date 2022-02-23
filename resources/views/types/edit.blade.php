@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Edit Report Category | EO')
+@section('title', 'Edit Report Category & Field | EO')
 
 @section('content_header')
     <div class="my-2"></div>
@@ -14,7 +14,7 @@
                 <!-- card-header -->
                 <div class="card-header m-3 d-flex flex-column">
                     <h1 class="card-title text-3xl d-block mb-3">
-                        <b>Edit</b> Report Gategory
+                        <b>Edit</b> Report Category & Field
                     </h1>
                 </div>
                 <!-- /.card-header -->
@@ -45,11 +45,11 @@
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend wide-prepend">
                                         <label class="input-group-text overflow-auto" for="name">
-                                            Enter Report Category Name:
+                                            Enter Report Field Name:
                                         </label>
                                     </div>
                                     <input type="text" name="name" class="form-control" value="{{ $type->name }}"
-                                        placeholder="Enter Report Category Name" autofocus>
+                                        placeholder="Enter Report Field Name" autofocus>
 
                                     @error('name')
                                         <p class="text-red-700 text-sm">{{ $message }}</p>
@@ -59,11 +59,11 @@
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend wide-prepend">
                                         <label class="input-group-text overflow-auto" for="name">
-                                            Enter Report Category Description:
+                                            Enter Report Field Description:
                                         </label>
                                     </div>
                                     <input type="text" name="description" class="form-control"
-                                        value="{{ $type->description }}" placeholder="Enter Report Category description">
+                                        value="{{ $type->description }}" placeholder="Enter Report Field description">
 
                                     @error('description')
                                         <p class="text-red-700 text-sm">{{ $message }}</p>

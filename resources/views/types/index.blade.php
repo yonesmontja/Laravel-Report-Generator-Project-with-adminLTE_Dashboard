@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'All Report Types | EO')
+@section('title', 'All Report Fields | EO')
 
 @section('content_header')
     <div class="my-2"></div>
@@ -14,7 +14,7 @@
                 <!-- card-header -->
                 <div class="card-header m-3 d-flex flex-column">
                     <h1 class="card-title text-3xl d-block mb-3">
-                        <b>All</b> Report Types
+                        <b>All</b> Report Fields
                     </h1>
 
                     <div class="row mt-3 mb-1">
@@ -44,7 +44,7 @@
                                         <tr>
                                             <th width="5%">#ID</th>
                                             <th>Report Name</th>
-                                            <th>Report Type</th>
+                                            <th>Report Field</th>
                                             <th>Report Description</th>
                                             <th width="10%" class="text-center">Action</th>
                                         </tr>

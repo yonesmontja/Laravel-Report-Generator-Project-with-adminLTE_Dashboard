@@ -33,12 +33,12 @@ Route::put('report/update/{report}', [ReportController::class, 'update'])->name(
 Route::get('delete/{report}/', [ReportController::class, 'destroy'])->name('report.delete');
 
 // Report Types Routes
-Route::get('report/types', [ReportController::class, 'typeIndex'])->name('reports.types');
-Route::get('report/type/create', [ReportController::class, 'typeCreate'])->name('report.type.create');
-Route::put('report/type/create', [ReportController::class, 'typeStore'])->name('report.type.store');
-Route::get('report/type/edit/{type}', [ReportController::class, 'typeEdit'])->name('report.type.edit');
-Route::put('report/type/update/{type}', [ReportController::class, 'typeUpdate'])->name('report.type.update');
-Route::get('report/type/delete/{type}', [ReportController::class, 'typeDestroy'])->name('report.type.delete');
+Route::get('report/fields', [ReportController::class, 'typeIndex'])->name('reports.types');
+Route::get('report/field/create', [ReportController::class, 'typeCreate'])->name('report.type.create');
+Route::put('report/field/create', [ReportController::class, 'typeStore'])->name('report.type.store');
+Route::get('report/field/edit/{type}', [ReportController::class, 'typeEdit'])->name('report.type.edit');
+Route::put('report/field/update/{type}', [ReportController::class, 'typeUpdate'])->name('report.type.update');
+Route::get('report/field/delete/{type}', [ReportController::class, 'typeDestroy'])->name('report.type.delete');
 
 // Report Data Routes
 Route::get('reports/data/show', [ReportController::class, 'dataShow'])->name('reports.data.show');

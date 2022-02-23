@@ -76,7 +76,7 @@
                                                         @endforelse
                                                     </td>
                                                     <td width="100">
-                                                        <a href="">
+                                                        <a href="{{ route('report.data.edit', $reportUser->id) }}">
                                                             <button
                                                                 class="btn rounded bg-yellow-400 hover:bg-yellow-500 px-2 py-1 mb-2">
                                                                 <i class="fas fa-edit"></i>
@@ -84,7 +84,7 @@
                                                                 Edit
                                                             </button>
                                                         </a>
-                                                        <a href="">
+                                                        <a href="{{ route('report.data.delete', $reportUser->id) }}">
                                                             <button
                                                                 class="btn rounded bg-red-600 text-white hover:bg-red-700 py-1">
                                                                 <i class="fas fa-trash"></i>
