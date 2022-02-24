@@ -60,17 +60,10 @@
                                                 <label class="input-group-text overflow-auto"
                                                     for="report_type">{{ $type->name }}:</label>
                                             </div>
-                                            <input type="text" name="{{ $type->id }}" wire:model="title"
-                                                class="form-control" placeholder="Enter {{ $type->name }}">
+                                            <input type="text" name="{{ $type->id }}" required class="form-control"
+                                                placeholder="Enter {{ $type->name }}">
 
                                             <input type="hidden" name="report_id" value="{{ request('report') }}">
-
-                                            {{-- @if ($errors->has('title'))
-                                                <div class="invalid-feedback">
-                                                    <strong>{{ $errors->first('title') }}</strong>
-                                                </div>
-                                            @endif --}}
-
                                         </div>
                                     </div>
                                 @empty

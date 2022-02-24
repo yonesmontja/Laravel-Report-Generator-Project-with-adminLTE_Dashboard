@@ -42,12 +42,12 @@ class ReportController extends Controller
 
     public function edit(Report $report)
     {
-        if (is_null($report)) {
+        // dd(!is_null($report->id));
+        if (is_null($report->id)) {
             return redirect()->route('reports');
         }
 
-        return view('records.edit')
-            ->with(['reports' => $report]);
+        return view('records.edit')->with(['reports' => $report]);
     }
 
     public function update(Request $request, $id)
@@ -64,11 +64,7 @@ class ReportController extends Controller
 
     public function destroy(Report $report)
     {
-        if (!is_null($report)) {
-            $report->delete();
-        }
-
-        return redirect()->route('reports');
+        $report->delete();
     }
 
     #endregion
@@ -111,7 +107,7 @@ class ReportController extends Controller
 
     public function typeEdit(ReportType $type)
     {
-        if (is_null($type)) {
+        if (is_null($type->id)) {
             return redirect()->route('reports.type');
         }
 
@@ -138,10 +134,7 @@ class ReportController extends Controller
 
     public function typeDestroy(ReportType $type)
     {
-        if (!is_null($type)) {
-            $type->delete();
-        }
-
+        $type->delete();
         return redirect()->route('reports.types');
     }
 
@@ -163,7 +156,8 @@ class ReportController extends Controller
         // dd(!(is_null(auth()->id())) ? auth()->id() : 10);
         $reportUser = ReportUser::create([
             'user_id'   => !(is_null(auth()->id())) ? auth()->id() : 1,
-            'report_id' => request()->input('report_id'),
+            'report_id' => 'required'
+            // 'report_id' => request()->input('report_id'),
         ]);
 
         $report = Report::find(request()->input('report_id'));
@@ -189,50 +183,56 @@ class ReportController extends Controller
         ]);
     }
 
-    public function dataEdit(ReportUser $data)
+    public function dataViewSingle(ReportUser $single)
     {
-        // dd(auth()->id());
-        // dd(ReportType::where('report_id', $data->report_id)->get());
-        if (is_null($data)) {
-            return redirect()->route('reports.data.show');
-        }
-
-        return view('data.edit', [
-            'prevReport' => $data,
-            'prevType'   => ReportType::where('report_id', $data->report_id)->get(),
-            'reportData' => ReportUserData::all()
-            // 'allReports'  => Report::orderBy('name')->with('report_types')->get(),
-            // 'allTypes'    => ReportType::where('report_id', request('report'))
+        return view('data.view-single', [
+            'user'             => User::whereId($single->user_id)->first(),
+            'singleReport'     => $single,
+            'singleReportType' => ReportType::where('report_id', $single->report_id)->get(),
+            'reportData'       => ReportUserData::all()
         ]);
     }
 
-    public function dataUpdate(ReportUser $data)
-    {
-        // dd($data);
-        $reportUser = ReportUser::whereId($data->id)->update([
-            'user_id'   => $data->user_id,
-            'report_id' => request()->input('report_id'),
-        ]);
+    // public function dataEdit(ReportUser $data)
+    // {
+    //     // dd(auth()->id());
+    //     if (is_null($data->id)) {
+    //         return redirect()->route('reports.data.show');
+    //     }
 
-        $report = Report::find(request()->input('report_id'));
+    //     return view('data.edit', [
+    //         'prevReport' => $data,
+    //         'prevType'   => ReportType::where('report_id', $data->report_id)->get(),
+    //         'reportData' => ReportUserData::all()
+    //         // 'allReports'  => Report::orderBy('name')->with('report_types')->get(),
+    //         // 'allTypes'    => ReportType::where('report_id', request('report'))
+    //     ]);
+    // }
 
-        foreach ($report->report_types as $type) {
-            ReportUserData::whereId($data->id)->update([
-                'report_user_id' => $data->user_id,
-                'report_type_id' => $type->id,
-                'value'          => request()->input($type->id)
-            ]);
-        }
+    // public function dataUpdate(ReportUser $data)
+    // {
+    //     $reportUser = ReportUser::whereId($data->id)->update([
+    //         'user_id'   => $data->user_id,
+    //         'report_id' => request()->input('report_id'),
+    //     ]);
 
-        return redirect()->route('reports.data.show');
-    }
+    //     $report = Report::find(request()->input('report_id'));
+
+    //     foreach ($report->report_types as $type) {
+    //         ReportUserData::whereId($data->id)->update([
+    //             'report_user_id' => $data->user_id,
+    //             'report_type_id' => $type->id,
+    //             'value'          => request()->input($type->id)
+    //         ]);
+    //     }
+
+    //     return redirect()->route('reports.data.show');
+    // }
 
     public function dataDestroy(ReportUser $data)
     {
-        if (!is_null($data)) {
-            ReportUserData::where('report_user_id', $data->id)->delete();
-            $data->delete();
-        }
+        ReportUserData::where('report_user_id', $data->id)->delete();
+        $data->delete();
 
         return redirect()->route('reports.data.show');
     }

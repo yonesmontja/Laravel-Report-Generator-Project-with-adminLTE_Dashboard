@@ -18,7 +18,7 @@
                     </h1>
                 </div>
                 <!-- /.card-header -->
-                
+
                 <!-- card-body -->
                 <div class="card-body">
                     @if (optional($reportUsers)->count() > 0)
@@ -76,17 +76,18 @@
                                                         @endforelse
                                                     </td>
                                                     <td width="100">
-                                                        <a href="{{ route('report.data.edit', $reportUser->id) }}">
+                                                        {{-- <a href="{{ route('report.data.view.single', $reportUser->id) }}"> --}}
+                                                        <a href="#">
                                                             <button
-                                                                class="btn rounded bg-yellow-400 hover:bg-yellow-500 px-2 py-1 mb-2">
-                                                                <i class="fas fa-edit"></i>
+                                                                class="btn rounded bg-blue-400 text-white hover:bg-blue-500 py-1 mb-2">
+                                                                <i class="fas fa-eye"></i>
                                                                 &nbsp;
-                                                                Edit
+                                                                View
                                                             </button>
                                                         </a>
                                                         <a href="{{ route('report.data.delete', $reportUser->id) }}">
                                                             <button
-                                                                class="btn rounded bg-red-600 text-white hover:bg-red-700 py-1">
+                                                                class="btn rounded bg-red-600 text-white hover:bg-red-700 px-3 py-1">
                                                                 <i class="fas fa-trash"></i>
                                                                 &nbsp;
                                                                 Del

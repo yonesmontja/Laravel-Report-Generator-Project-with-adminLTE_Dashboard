@@ -112,8 +112,8 @@ class DatabaseSeeder extends Seeder
             'report_id' => 3
         ]);
         ReportUser::create([
-            'user_id'   => 2,
-            'report_id' => 1
+            'user_id'   => 3,
+            'report_id' => 3
         ]);
 
 
@@ -147,6 +147,21 @@ class DatabaseSeeder extends Seeder
             'report_user_id' => 2,
             'report_type_id' => 9,
             'value'          => 'Expert'
+        ]);
+        ReportUserData::create([
+            'report_user_id' => 3,
+            'report_type_id' => 7,
+            'value'          => 'Haris'
+        ]);
+        ReportUserData::create([
+            'report_user_id' => 3,
+            'report_type_id' => 8,
+            'value'          => 'PUBG Mobile'
+        ]);
+        ReportUserData::create([
+            'report_user_id' => 3,
+            'report_type_id' => 9,
+            'value'          => 'Ace'
         ]);
     }
 }

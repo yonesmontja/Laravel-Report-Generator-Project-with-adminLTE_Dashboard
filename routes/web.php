@@ -42,6 +42,7 @@ Route::get('report/field/delete/{type}', [ReportController::class, 'typeDestroy'
 
 // Report Data Routes
 Route::get('reports/data/show', [ReportController::class, 'dataShow'])->name('reports.data.show');
+Route::get('reports/data/view_single/{single}', [ReportController::class, 'dataViewSingle'])->name('report.data.view.single');
 Route::get('reports/data/index', [ReportController::class, 'dataIndex'])->name('report.data.index');
 Route::put('reports/data/index', [ReportController::class, 'dataStore'])->name('report.data.store');
 Route::get('reports/data/edit/{data}', [ReportController::class, 'dataEdit'])->name('report.data.edit');
