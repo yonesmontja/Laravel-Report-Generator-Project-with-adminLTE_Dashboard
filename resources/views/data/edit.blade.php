@@ -61,7 +61,7 @@
                                                     for="report_type">{{ $type->name }}:</label>
                                             </div>
                                             <input type="text" name="{{ $type->id }}" class="form-control"
-                                                value="{{ $reportData->where('report_user_id', $prevReport->id)->where('report_type_id', $type->id)->first()->value }}">
+                                                value="{{ $reportData->where('report_user_id', $prevReport->id)->where('report_type_id', $type->id)->first()->value ?? '' }}">
 
                                             <input type="hidden" name="report_id" value="{{ $prevReport->report_id }}">
 

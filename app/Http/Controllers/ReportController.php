@@ -160,8 +160,9 @@ class ReportController extends Controller
 
     public function dataStore()
     {
+        // dd(!(is_null(auth()->id())) ? auth()->id() : 10);
         $reportUser = ReportUser::create([
-            'user_id'   => 1,
+            'user_id'   => !(is_null(auth()->id())) ? auth()->id() : 1,
             'report_id' => request()->input('report_id'),
         ]);
 
@@ -221,10 +222,6 @@ class ReportController extends Controller
                 'report_type_id' => $type->id,
                 'value'          => request()->input($type->id)
             ]);
-            // $row->report_user_id = $data->id;
-            // $row->report_type_id = $type->id;
-            // $row->value = request()->input($type->id);
-            // $row->save();
         }
 
         return redirect()->route('reports.data.show');
