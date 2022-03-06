@@ -78,14 +78,14 @@
                     <td>
                       @if ($reportUser->report_id == $reportTemplates->where('report_id', $reportUser->report_id)->pluck('report_id')->first())
                       
-                      <a href="{{ route('view-report', ['reportName' => str_replace('.blade.php', '', $reportTemplates->where('report_id', $reportUser->report_id)->pluck('report_template')->first()), 'data' => $reportUser->id, 'isChineseEnabled' => 0]) }}">
+                      <a href="{{ route('view-report', ['reportName' => str_replace('.blade.php', '', $reportTemplates->where('report_id', $reportUser->report_id)->pluck('report_template_name')->first()), 'data' => $reportUser->id, 'isChineseEnabled' => 0]) }}">
                         <button class="btn btn-block rounded bg-blue-400 text-white hover:bg-blue-500 py-1 mb-2">
                           <i class="fas fa-eye"></i>
                           &nbsp;
                           View in ENG
                         </button>
                       </a>
-                      <a href="{{ route('view-report', ['reportName' => str_replace('.blade.php', '', $reportTemplates->where('report_id', $reportUser->report_id)->pluck('report_template')->first()), 'data' => $reportUser->id, 'isChineseEnabled' => 1]) }}">
+                      <a href="{{ route('view-report', ['reportName' => str_replace('.blade.php', '', $reportTemplates->where('report_id', $reportUser->report_id)->pluck('report_template_name')->first()), 'data' => $reportUser->id, 'isChineseEnabled' => 1]) }}">
                         <button class="btn btn-block rounded bg-blue-400 text-white hover:bg-blue-500 py-1 mb-2">
                           <i class="fas fa-eye"></i>
                           &nbsp;

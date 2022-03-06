@@ -234,34 +234,36 @@ class ReportController extends Controller
 
     public function templateindex()
     {
-        $syncedTemplateFileNames = ReportTemplate::all()->pluck('report_template')->toArray();
+        $syncedTemplateFileNames = ReportTemplate::all()->pluck('report_template_name')->toArray();
 
         $templateFiles = ['No Templates Found'];
         if (file_exists($directory = resource_path('views/templates/all-templates'))) {
             // $templateFiles = File::files($directory);
-            $templateFiles = array_diff(scandir($directory), array('.', '..')); // '.' and '..' directories will be excluded here.
-            $templateFiles = array_diff($templateFiles, $syncedTemplateFileNames); // synced templates will be excluded here.
+            $templateFiles         = scandir($directory);
+            $templateFiles         = array_diff($templateFiles, array('.', '..'));          // '.' and '..' directories will be excluded here.
+            $unsyncedTemplateFiles = array_diff($templateFiles, $syncedTemplateFileNames);  // synced templates will be excluded here.
         }
 
         return view('templates.index', [
-            'unsyncedReports' => Report::doesntHave('report_template')->get(),
-            'allFiles'        => $templateFiles,
-            'allReports'      => Report::all(),
-            'allTemplates'    => ReportTemplate::paginate(4)
+            'unsyncedReports'   => Report::doesntHave('report_template')->get(),
+            'unsyncedTemplates' => $unsyncedTemplateFiles,
+            'allReports'        => Report::all(),
+            'allTemplates'      => ReportTemplate::paginate(4)
         ]);
     }
 
     public function templateStore()
     {
+        request()->all();
         request()->validate([
-            'report_id'       => 'required|numeric|unique:report_templates,report_id',
-            'report_template' => 'required|string|unique:report_templates,report_template'
+            'report_id'            => 'required|numeric|unique:report_templates,report_id',
+            'report_template_name' => 'required|string|unique:report_templates,report_template_name'
         ]);
 
         try {
             ReportTemplate::create([
-                'report_id'       => request()->report_id,
-                'report_template' => request()->report_template
+                'report_id'            => request()->report_id,
+                'report_template_name' => request()->report_template_name
             ]);
 
             return redirect()->back();

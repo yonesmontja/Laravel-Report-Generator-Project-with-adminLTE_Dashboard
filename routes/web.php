@@ -52,7 +52,7 @@ Route::get('report/templates', [ReportController::class, 'templateIndex'])->name
 Route::put('report/template', [ReportController::class, 'templateStore'])->name('report.template.store');
 Route::get('report/template/{template}', [ReportController::class, 'templateDestroy'])->name('report.template.delete');
 
-Route::get('view-report/{reportName}/{data}/{isChineseEnabled}', [ReportController::class, 'viewReport'])->name('view-report');
+Route::get('report/view-report/{reportName}/{data}/{isChineseEnabled}', [ReportController::class, 'viewReport'])->name('view-report');
 /* Whenever this route is called, it must follow the given end point url with two values in place of given variables.
 ** Then viewReoprt() function will be invoked from the controller with the values given in these url variables.
 ** Then viewReport() will return the formReport view.

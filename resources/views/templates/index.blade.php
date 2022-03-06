@@ -51,16 +51,16 @@
                     Choose a Report Template:
                   </label>
                 </div>
-                <select class="form-control overflow-y-auto" name="report_template">
-                  @forelse ($allFiles as $file)
-                  {{-- @dd(basename($file)) --}}
-                  <option value="{{ $file }}">{{ ucwords(str_replace('.blade.php', '', $file)) }}</option>
+                <select class="form-control overflow-y-auto" name="report_template_name">
+                  @forelse ($unsyncedTemplates as $template)
+                  {{-- @dd(basename($template)) --}}
+                  <option value="{{ $template }}">{{ ucwords(str_replace('.blade.php', '', $template)) }}</option>
                   @empty
-                  <option disabled selected>No file Template Found</option>
+                  <option disabled selected>No template Template Found</option>
                   @endforelse
                 </select>
 
-                @error('report_template')
+                @error('report_template_name')
                     <p class="text-red-700 text-sm bg-red-100 py-2">{{ $message }}</p>
                 @enderror
               </div>
@@ -106,7 +106,7 @@
                     {{ $allReports->where('id', $template->report_id)->first()->name }}
                   </td>
                   <td class="text-left">
-                    {{ ucwords(str_replace('.blade.php', '', $template->report_template)) }}
+                    {{ ucwords(str_replace('.blade.php', '', $template->report_template_name)) }}
                   </td>
                   <td>
                     <a href="{{ route('report.template.delete', $template->id) }}">

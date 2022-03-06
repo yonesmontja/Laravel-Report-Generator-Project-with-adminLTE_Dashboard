@@ -17,7 +17,7 @@ class CreateReportTemplatesTable extends Migration
             $table->id();
             $table->foreignId('report_id')->unique();
             $table->foreign('report_id')->references('id')->on('reports');
-            $table->string('report_template')->unique();
+            $table->string('report_template_name')->unique();
             $table->timestamps();
         });
     }

@@ -2,15 +2,13 @@
 
 namespace Database\Seeders;
 
-use App\Models\Employee;
 use App\Models\Report;
+use App\Models\ReportTemplate;
 use App\Models\ReportType;
 use App\Models\ReportUser;
 use App\Models\ReportUserData;
 use App\Models\User;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
-use Faker\Factory as Faker;
 
 class DatabaseSeeder extends Seeder
 {
@@ -352,6 +350,13 @@ class DatabaseSeeder extends Seeder
             'report_user_id' => 4,
             'report_type_id' => 31,
             'value'          => 'ecommerceoutset@gmail.com'
+        ]);
+
+
+        // Report Templates
+        ReportTemplate::create([
+            'report_id' => 5,
+            'report_template_name' => 'eo-report.blade.php',
         ]);
     }
 }
