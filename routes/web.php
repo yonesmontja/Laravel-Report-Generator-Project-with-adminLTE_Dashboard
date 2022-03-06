@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ReportController;
 use Illuminate\Support\Facades\Auth;
@@ -17,12 +18,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
-Auth::routes();
-
 Route::get('/home', [HomeController::class, 'index'])->name('home');
+
+Auth::routes();
 
 // Report Categories Routes
 Route::get('reports', [ReportController::class, 'index'])->name('reports');
@@ -42,9 +43,17 @@ Route::get('report/field/delete/{type}', [ReportController::class, 'typeDestroy'
 
 // Report Data Routes
 Route::get('reports/data/show', [ReportController::class, 'dataShow'])->name('reports.data.show');
-Route::get('reports/data/view_single/{single}', [ReportController::class, 'dataViewSingle'])->name('report.data.view.single');
 Route::get('reports/data/index', [ReportController::class, 'dataIndex'])->name('report.data.index');
-Route::put('reports/data/index', [ReportController::class, 'dataStore'])->name('report.data.store');
-Route::get('reports/data/edit/{data}', [ReportController::class, 'dataEdit'])->name('report.data.edit');
-Route::put('reports/data/update/{data}', [ReportController::class, 'dataUpdate'])->name('report.data.update');
-Route::get('reports/data/delete/{data}', [ReportController::class, 'dataDestroy'])->name('report.data.delete');
+Route::put('report/data/index', [ReportController::class, 'dataStore'])->name('report.data.store');
+Route::get('report/data/delete/{data}', [ReportController::class, 'dataDestroy'])->name('report.data.delete');
+
+// Report Template Routes
+Route::get('report/templates', [ReportController::class, 'templateIndex'])->name('report.templates.index');
+Route::put('report/template', [ReportController::class, 'templateStore'])->name('report.template.store');
+Route::get('report/template/{template}', [ReportController::class, 'templateDestroy'])->name('report.template.delete');
+
+Route::get('view-report/{reportName}/{data}/{isChineseEnabled}', [ReportController::class, 'viewReport'])->name('view-report');
+/* Whenever this route is called, it must follow the given end point url with two values in place of given variables.
+** Then viewReoprt() function will be invoked from the controller with the values given in these url variables.
+** Then viewReport() will return the formReport view.
+*/

@@ -257,15 +257,14 @@ return [
         ['header' => 'REPORTS'],
         [
             'text'  => 'Generate Report',
-            'icon'  => 'far fa fa-plus-square',
+            'icon'  => 'fas fa fa-plus-square',
             'route' => 'report.data.index',
             // 'icon_color' => 'info',
         ],
         [
             'text'  => 'All Reports',
-            'icon'  => 'far fa fa-user',
+            'icon'  => 'fas fa-file-alt',
             'route' => 'reports.data.show',
-            // 'icon_color' => 'green',
         ],
 
         ['header' => 'REPORT MANAGEMENT'],
@@ -283,6 +282,11 @@ return [
             'icon'  => 'far fa fa-database',
         ],
         [
+            'text'  => 'Report Templates',
+            'route' => 'report.templates.index',
+            'icon'  => 'far fa fa-database',
+        ],
+        [
             'text'       => 'Create',
             'icon'       => 'far fa fa-plus-square',
             'submenu'    => [
@@ -292,7 +296,7 @@ return [
                     'icon'  => 'far fa fa-angle-right',
                 ],
                 [
-                    'text'  => 'Report Type',
+                    'text'  => 'Report Field',
                     'route' => 'report.type.create',
                     'icon'  => 'far fa fa-angle-right',
                 ],

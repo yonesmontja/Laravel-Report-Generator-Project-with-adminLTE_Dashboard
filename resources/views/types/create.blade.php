@@ -20,7 +20,6 @@
                 <!-- /.card-header -->
 
                 <div class="text-center card-body">
-
                     <div class="container">
                         <form method="POST" action="{{ route('report.type.store') }}">
                             @csrf
@@ -33,9 +32,9 @@
                                             Choose a Report Category:
                                         </label>
                                     </div>
-                                    <select class="form-control overflow-y-auto" name="report_id">
+                                    <select value="{{ old('report_id') }}" class="form-control overflow-y-auto" name="report_id">
                                         @forelse ($reports as $report)
-                                            <option value="{{ $report->id }}">{{ $report->name }}</option>
+                                            <option value="{{ $report->id }}" @if (($report->id == old('report_id')) || ($report->id == session('last_selected_report'))) selected @endif>{{ $report->name }}</option>
                                         @empty
                                             <option disabled>No Report Categories Found</option>
                                         @endforelse

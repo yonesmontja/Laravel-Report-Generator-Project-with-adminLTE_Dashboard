@@ -45,9 +45,9 @@ class Report extends Model
         return $this->hasMany(ReportType::class);
     }
 
-    // One User can have Many Reports.
-    // public function report_user()
-    // {
-    //     return $this->belongsTo(ReportUser::class);
-    // }
+    // One Report can have One Report Template.
+    public function report_template()
+    {
+        return $this->hasOne(ReportTemplate::class);
+    }
 }

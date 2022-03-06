@@ -32,7 +32,7 @@
                                     <select class="form-control overflow-y-auto" name="report">
                                         @forelse ($allReports as $report)
                                             <option value="{{ $report->id }}"
-                                                @if ($report->id == request('report')) selected @endif>
+                                                @if ($report->id == request('report')) selected @elseif($report->id == old('report')) selected @endif>
                                                 {{ $report->name }}
                                             </option>
                                         @empty
@@ -86,12 +86,6 @@
                         </form>
                     </div>
 
-                    {{-- <div wire:target="edit,update,submit" wire:loading class="m-5">
-                        <div class="spinner-grow" style="width: 5rem; height: 5rem;" role="status">
-                            <span class="sr-only">Loading...</span>
-                        </div>
-                    </div> --}}
-
                 </div>
                 <!-- /.card-body -->
             </div>
@@ -107,7 +101,7 @@
 
     <style>
         .input-group>.input-group-prepend {
-            flex: 0 0 20%;
+            flex: 0 0 25%;
         }
 
         .input-group .input-group-text {

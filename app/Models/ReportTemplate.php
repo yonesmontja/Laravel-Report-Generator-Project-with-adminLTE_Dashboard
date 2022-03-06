@@ -5,15 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class ReportUserData extends Model
+class ReportTemplate extends Model
 {
     use HasFactory;
 
     protected $guarded = [];
-    
-    // Many Users Data can belong to one Report User.
-    public function report_user()
+
+    public function report()
     {
-        return $this->belongsTo(ReportUser::class);
+        return $this->belongsTo(Report::class);
     }
 }
