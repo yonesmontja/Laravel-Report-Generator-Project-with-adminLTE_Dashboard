@@ -46,10 +46,10 @@
                   </tr>
                 </thead>
                 <tbody>
-                  @foreach ($reportUsers as $reportUser)
+                  @foreach ($reportUsers as $key => $reportUser)
                   <tr class="hover:bg-slate-100">
                     <td>
-                      {{ $loop->iteration }}
+                      {{ $reportUsers->firstItem() + $key }}
                     </td>
                     <td>
                       {{ $users->where('id', $reportUser->user_id)->pluck('name')->first() }}
@@ -77,15 +77,23 @@
                     </td>
                     <td>
                       @if ($reportUser->report_id == $reportTemplates->where('report_id', $reportUser->report_id)->pluck('report_id')->first())
-                      
-                      <a href="{{ route('view-report', ['reportName' => str_replace('.blade.php', '', $reportTemplates->where('report_id', $reportUser->report_id)->pluck('report_template_name')->first()), 'data' => $reportUser->id, 'isChineseEnabled' => 0]) }}">
+
+                      <a href="{{ route('view-report', [
+                          'templateName'       => str_replace('.blade.php', '', $reportTemplates->where('report_id', $reportUser->report_id)->pluck('report_template_name')->first()),
+                          'data'             => $reportUser->id,
+                          'isChineseEnabled' => 0
+                          ]) }}">
                         <button class="btn btn-block rounded bg-blue-400 text-white hover:bg-blue-500 py-1 mb-2">
                           <i class="fas fa-eye"></i>
                           &nbsp;
                           View in ENG
                         </button>
                       </a>
-                      <a href="{{ route('view-report', ['reportName' => str_replace('.blade.php', '', $reportTemplates->where('report_id', $reportUser->report_id)->pluck('report_template_name')->first()), 'data' => $reportUser->id, 'isChineseEnabled' => 1]) }}">
+                      <a href="{{ route('view-report', [
+                          'templateName'       => str_replace('.blade.php', '', $reportTemplates->where('report_id', $reportUser->report_id)->pluck('report_template_name')->first()),
+                          'data'             => $reportUser->id,
+                          'isChineseEnabled' => 1
+                          ]) }}">
                         <button class="btn btn-block rounded bg-blue-400 text-white hover:bg-blue-500 py-1 mb-2">
                           <i class="fas fa-eye"></i>
                           &nbsp;
@@ -134,6 +142,12 @@
       </div>
       <!-- /.card-body -->
 
+      <div class="card-footer">
+        <div class="mx-2">
+          {{ $reportUsers->links() }}
+        </div>
+      </div>
+      <!-- /.card-footer -->
     </div>
   </div>
 </div>

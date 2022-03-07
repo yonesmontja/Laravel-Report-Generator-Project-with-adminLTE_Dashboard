@@ -47,9 +47,9 @@
                   </tr>
                 </thead>
                 <tbody>
-                  @forelse ($reports as $report)
+                  @forelse ($reports as $key => $report)
                   <tr class="hover:bg-slate-100">
-                    <td>{{ $loop->iteration }}</td>
+                    <td>{{ $reports->firstItem() + $key }}</td>
                     <td class="text-left">{{ $report->name }}</td>
                     <td class="text-center">
                       <a href="{{ route('report.edit', $report->id) }}">

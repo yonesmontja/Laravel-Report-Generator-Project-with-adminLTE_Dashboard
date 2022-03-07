@@ -57,7 +57,7 @@ class User extends Authenticatable
 
     public function adminlte_desc()
     {
-        return "I am a Backend Web Developer in Larawel & Livewire";
+        return "I am a Laravel & Livewire Backend Web Developer";
     }
 
     public function adminlte_profile_url()

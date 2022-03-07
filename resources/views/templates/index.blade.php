@@ -97,10 +97,10 @@
               </thead>
 
               <tbody>
-                @foreach ($allTemplates as $template)
+                @foreach ($allTemplates as $key => $template)
                 <tr class="hover:bg-slate-100">
                   <td>
-                    {{ $loop->iteration }}
+                    {{ $allTemplates->firstItem() + $key }}
                   </td>
                   <td class="text-left">
                     {{ $allReports->where('id', $template->report_id)->first()->name }}

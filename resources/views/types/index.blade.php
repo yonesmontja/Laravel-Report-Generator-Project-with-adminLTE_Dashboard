@@ -49,9 +49,9 @@
                   </tr>
                 </thead>
                 <tbody>
-                  @forelse ($types as $type)
+                  @forelse ($types as $key => $type)
                   <tr class="hover:bg-slate-100">
-                    <td>{{ $loop->iteration }}</td>
+                    <td>{{ $types->firstItem() + $key }}</td>
                     <td class="text-left">{{ $type->report->name . '(' . $type->report->id . ')' }}</td>
                     <td class="text-left">{{ $type->name }}</td>
                     <td class="text-left">{{ $type->description }}</td>

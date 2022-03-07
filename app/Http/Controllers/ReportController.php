@@ -202,7 +202,7 @@ class ReportController extends Controller
     public function dataShow()
     {
         return view('data.show', [
-            'reportUsers'     => ReportUser::orderBy('id', 'desc')->with('report_user_data')->get(),
+            'reportUsers'     => ReportUser::orderBy('id', 'desc')->with('report_user_data')->paginate(4),
             'users'           => User::all(),
             'reports'         => Report::all(),
             'reportTypes'     => ReportType::all(),
@@ -218,9 +218,9 @@ class ReportController extends Controller
         return redirect()->back();
     }
 
-    public function viewReport($reportName, ReportUser $data, $isChineseEnabled)
+    public function viewReport($templateName, ReportUser $data, $isChineseEnabled)
     {
-        return view('templates.all-templates.' . $reportName, [
+        return view('templates.all-templates.' . $templateName, [
             'reportUserData'   => $data->report_user_data,
             'reportType'       => ReportType::all(),
             'isChineseEnabled' => $isChineseEnabled
@@ -254,7 +254,6 @@ class ReportController extends Controller
 
     public function templateStore()
     {
-        request()->all();
         request()->validate([
             'report_id'            => 'required|numeric|unique:report_templates,report_id',
             'report_template_name' => 'required|string|unique:report_templates,report_template_name'
