@@ -256,15 +256,15 @@ return [
 
         ['header' => 'REPORTS'],
         [
+            'text'  => 'All Reports',
+            'icon'  => 'fas fa-file-alt',
+            'route' => 'reports.data.show',
+        ],
+        [
             'text'  => 'Generate Report',
             'icon'  => 'fas fa fa-plus-square',
             'route' => 'report.data.index',
             // 'icon_color' => 'info',
-        ],
-        [
-            'text'  => 'All Reports',
-            'icon'  => 'fas fa-file-alt',
-            'route' => 'reports.data.show',
         ],
 
         ['header' => 'REPORT MANAGEMENT'],

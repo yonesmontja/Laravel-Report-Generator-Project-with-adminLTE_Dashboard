@@ -51,6 +51,7 @@ Route::get('report/data/delete/{data}', [ReportController::class, 'dataDestroy']
 Route::get('report/templates', [ReportController::class, 'templateIndex'])->name('report.templates.index');
 Route::put('report/template', [ReportController::class, 'templateStore'])->name('report.template.store');
 Route::get('report/template/{template}', [ReportController::class, 'templateDestroy'])->name('report.template.delete');
+
 Route::get('report/view-report/{templateName}/{data}/{isChineseEnabled}', [ReportController::class, 'viewReport'])->name('view-report');
 /* Whenever this route is called, it must follow the given end point url with three values in place of given variables.
 ** Then 'view-report' ROUTE / URL will be invoked from 'data.show' view.

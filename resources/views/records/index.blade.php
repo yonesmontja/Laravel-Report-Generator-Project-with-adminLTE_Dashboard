@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'All Report | EO')
+@section('title', 'Report Categories | EO')
 
 @section('content_header')
 <div class="my-2"></div>
