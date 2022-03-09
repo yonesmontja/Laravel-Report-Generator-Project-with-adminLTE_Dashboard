@@ -137,7 +137,7 @@ class ReportController extends Controller
     {
         $request->validate([
             'report_id'   => 'required|integer',
-            // The name must be unique while ignoring the row with an id of $id and ignoring where report_id = request('report_id')
+            // The name must be unique while ignoring the row with an id = $id and report_id = request('report_id')
             'name'        => 'required|min:1|max:50|string|unique:report_types,name,' . $id . ',id,report_id,' . request('report_id'),
             'description' => 'max:50'
         ]);

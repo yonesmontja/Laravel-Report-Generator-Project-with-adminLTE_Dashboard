@@ -5,7 +5,11 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
+                    @auth
+                    <div class="card-header">Welcome, {{ auth()->user()->name }}!</div>
+                    @else
                     <div class="card-header">{{ __('Dashboard') }}</div>
+                    @endauth
 
                     <div class="card-body">
                         @if (session('status'))
